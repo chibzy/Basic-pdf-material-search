@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>unec</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="css/Footer-Basic.css">
+    <link rel="stylesheet" href="css/Sidebar-Menu-1.css">
+    <link rel="stylesheet" href="css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="modal fade" role="dialog" tabindex="-1" id="aboutus">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">About application</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><img class="float-left" src="img/signaltech.png" style="width: 30%;margin-right: 7px;">
+                    <p>This a product of signal technolgy service, an ICT base company in Enugu Nigeria. Contact us on : 07036765446 or 09068947880.</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button" data-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="sidebar-wrapper" style="background-color: rgb(17,109,22);">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="<?php echo $this->url('dashboard');?>"><i class="fa fa-home"></i>&nbsp; Home </a></li>
+                <li> <a href="<?php echo $this->url('addnew');?>"><i class="fa fa-plus-circle"></i>&nbsp; Add new</a></li>
+                <li> </li>
+                <li> <a href="<?php echo $this->url('signout')?>"><i class="fa fa-sign-out"></i>&nbsp; Signout</a></li>
+            </ul>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link d-print-none d-md-none d-lg-none d-xl-none" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <h1 style="height: 66px;"><img class="img-fluid float-right" src="img/dept_logo.jpg" width="320px"> </h1>
+                        </div>
+                        <?php echo $this->content;?>
+                        <footer class="footer-basic">
+                            <div class="social"><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-whatsapp"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-facebook-f"></i></a></div>
+                            <ul class="list-inline" style="font-size: 14px;">
+                                <li class="list-inline-item"><a href="#" class="btnabout">Graphic Design</a></li>
+                                <li class="list-inline-item"><a href="#" class="btnabout">Computer Hardware Maintenance</a></li>
+                                <li class="list-inline-item"><a href="#" class="btnabout">Computer Networking</a></li>
+                                <li class="list-inline-item"><a href="#" class="btnabout">Real Estate Agent</a></li>
+                                <li class="list-inline-item"><a href="#" class="btnabout">General Contractor</a></li>
+                            </ul>
+                            <p class="copyright">Dept. &nbsp;of Architecture © 2020<br></p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/Sidebar-Menu.js"></script>
+</body>
+
+</html>

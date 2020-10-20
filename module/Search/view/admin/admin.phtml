@@ -1,0 +1,27 @@
+    <div class="container-fluid">
+        <div class="row" style="padding-top: 80px;padding-bottom: 80x;padding-right: 0;padding-left: 0;">
+            <div class="col spaceLogin">
+                <div></div>
+                <div>
+                    <form method="post">
+                        <div class="form-group"><i class="fa fa-unlock-alt" style="font-size: 80px;margin-right: 40%;margin-left: 40%;width: 20%;color: rgb(61,154,248);"></i></div>
+                        <div class="form-group">
+                            <fieldset>
+                                <legend>Login Details</legend>
+                                <?php 
+                                if($this->alert!=''){
+                                    ?>
+                                    <div class="alert alert-danger"><?php echo $this->alert;?></div>
+                                    <?php
+                                }
+                                ?>
+                                <label>Username :</label><input name="username" class="form-control" type="text"><label>Password:</label><input name='password' class="form-control" type="password" style="margin-bottom: 20px;">
+                                    <button type="submit" class="btn btn-outline-primary btn-block"
+                                    role="button" name='btnSubmit'>Login</button>
+                                    </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

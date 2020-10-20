@@ -1,0 +1,55 @@
+    <div class="container-fluid">
+        <div class="row" style="padding-top: 5px;padding-bottom: 80x;padding-right: 0;padding-left: 0;">
+            <div class="col space3">
+                <div style="margin-bottom: 10px;">
+                <form method="get" action="<?php echo $this->url('search')?>">
+                    <div class="input-group" style="padding-top: 1px;">
+                        <div class="input-group-prepend"></div><input class="form-control" name="search" value="<?php echo $this->searchtext;?>" type="text" placeholder="e.g Relevance of town planning in national development">
+                        <div class="input-group-append"><button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>&nbsp; Search</button></div>
+                    </div>
+                </form>
+                </div>
+                <div>
+                <?php 
+                    if(isset($this->alert)){
+                        ?>
+                        <div class="alert alert-danger"><?php echo $this->alert;?></div>
+                        <?php 
+                    }else
+                        $results=$this->paginator;
+                    if(isset($results)){
+                        foreach ($results as $result){
+                ?>
+                    <div class="bg-light" style="line-height: 18px;padding: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 0px;">
+                        <p class="lead text-left text-primary" style="font-size: 28px;"><a href="<?php echo $result->filepath;?>" target='_new'><?php echo $result->title;?><br></a></p>
+                        <p style="font-style: italic;"><?php echo $result->note;?>... <strong>Author</strong> : <?php echo $result->author;?> <strong>Published by</strong> <?php echo $result->publisher;?></p>
+                        <p class="text-right text-primary" style="font-size: 13px;"><label>A <?php echo $result->pagenumber;?> pages |</label><label>&nbsp;<?php echo $result->filetype;?> file |</label><label>&nbsp;Uploaded since <?php echo $result->regdate;?> |</label><label>&nbsp;Last viewed on <?php echo $result->lastview;?>&nbsp;</label></p>
+                    </div>
+                    <?php 
+                        }
+                    }
+                    ?>
+                </div>
+                <div>
+                    <hr>
+                    <?php
+                        // add at the end of the file after the table
+                        echo $this->paginationControl(
+                        // the paginator object
+                        $this->paginator,
+                        // the scrolling style
+                        'sliding',
+                        // the partial to use to render the control
+                        'partial/paginator.phtml',
+                        // the route to link to when a user clicks a control link
+                        array(
+                        'route' => "search",
+                        'data'=>"$this->searchtext"
+                        )
+                        );
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    

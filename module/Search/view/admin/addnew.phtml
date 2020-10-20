@@ -1,0 +1,76 @@
+
+                        <div class="space">
+                            <form method="post" enctype="multipart/form-data">
+                            
+                                <div class="form-group" style="margin-top: 20px;padding: 5px;">
+                                    <fieldset>
+                                        <legend><i class="fa fa-plus-circle"></i>&nbsp;Add new material</legend>
+                                        <?php echo $this->alert;?>
+                                        <label>Material Title :&nbsp;</label><input class="form-control" type="text" name="title" value="<?php echo $this->title;?>"><label>Material Description (not less than 100 words):&nbsp;</label>
+                                        <textarea
+                                            class="form-control" name="note"><?php echo $this->note;?></textarea>
+                                            <label>Material genre :&nbsp;</label>
+                                            <select class="form-control" name="genre">
+                                            	<?php 
+                                            	$genres=array(
+                                            	    'Book','Journal','Note'
+                                            	);
+                                            	for($i=0;$i<count($genres);$i++){
+                                                    if($this->genre==$genres[$i]){
+                                                    	        ?>
+                                            	        <option value="<?php echo $genres[$i]?>" selected="selected"><?php echo $genres[$i];?></option>
+                                            	        <?php 
+                                            	    }else{
+                                            	        ?>
+                                            	        <option value="<?php echo $genres[$i];?>"><?php echo $genres[$i];?></option>
+                                            	        <?php 
+                                            	    }
+                                            	}
+                                            	?>
+                                            </select>
+                                            </fieldset><label>File type :&nbsp;</label>
+                                    <select name="filetype" class="form-control">
+                                    <?php 
+                                           $filetypes=array(
+                                               'PDF','Word','Excel'
+                                           );
+                                           for($i=0;$i<count($filetypes);$i++){
+                                                if($this->filetype==$filetypes[$i]){
+                                                       ?>
+                                        	        <option value="<?php echo $filetypes[$i]?>" selected="selected"><?php echo $filetypes[$i];?></option>
+                                        	        <?php 
+                                        	    }else{
+                                        	        ?>
+                                        	        <option value="<?php echo $filetypes[$i];?>"><?php echo $filetypes[$i];?></option>
+                                        	        <?php 
+                                        	    }
+                                        	}
+                                    
+                                    ?>
+                                    </select><label>No. of pages :&nbsp;</label>
+                                    <select class="form-control" name="pagenumber">
+                                    	<?php 
+                                    	$pages=array(
+                                    	    50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,1000
+                                    	);
+                                    	for($i=0;$i<count($pages);$i++){
+                                    	    if($this->pagenumber==$pages[$i]){
+                                    	        ?>
+                                    	        <option value="<?php echo $pages[$i]?>" selected="selected"><?php echo $pages[$i];?></option>
+                                    	        <?php 
+                                    	    }else{
+                                    	        ?>
+                                    	        <option value="<?php echo $pages[$i];?>"><?php echo $pages[$i];?></option>
+                                    	        <?php 
+                                    	    }
+                                    	}
+                                    	?>
+                                    </select>
+                                        <label>Author :&nbsp;</label><input value="<?php echo $this->author;?>" name="author" class="form-control" type="text">
+                                        <label>Publisher  with date :&nbsp;</label><input value="<?php echo $this->publisher;?>" name="publisher" class="form-control" type="text">
+                                        <label>Upload file :&nbsp;(supported format:.pdf,.xlsx,.xls,.doc,.docx, must not be more than 20MB in size.)</label>
+                                        <input type="file" name="doc" value="<?php echo $this->doc;?>"></div>
+                                        
+                                <div class="btn-group" role="group"><button class="btn btn-secondary" type="submit" name="btnAdd"><i class="fa fa-plus-circle"></i>&nbsp;Add Material</button><a class="btn btn-danger" role="button" href="<?php echo $this->url('dashboard');?>"><i class="fa fa-remove"></i>&nbsp;Cancel</a></div>
+                            </form>
+                        </div>
