@@ -1,0 +1,54 @@
+body {
+  font-size: 14px;
+}
+
+.col {
+}
+
+.space3 {
+  /*max-width: 60%;*/
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.space {
+  max-width: 60%;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.spaceLogin {
+  max-width: 30%;
+  margin-right: 35%;
+  margin-left: 35%;
+}
+
+@media (max-width: 576px) {
+  .spaceLogin {
+    max-width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .space {
+    max-width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+@media (max-width: 576px) {
+  .space3 {
+    max-width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
